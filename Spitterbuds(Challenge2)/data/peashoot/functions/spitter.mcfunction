@@ -23,7 +23,7 @@ execute as @e[tag=spitter] at @s run tp @s ^ ^ ^ facing entity @a[sort=nearest,l
 
 
 execute as @e[tag=PEABADbullet] at @s unless block ^ ^1 ^.7 minecraft:air run teleport @s ~ -256 ~
-execute as @e[tag=PEABADaimed,tag=PEABADbullet] at @s run tp @s ^ ^ ^.7
+execute as @e[tag=PEABADaimed,tag=PEABADbullet] at @s run tp @s ^ ^ ^.6
 scoreboard players add @e[tag=PEABADbullet] PEAlifetime 1
 teleport @e[tag=PEABADbullet,scores={PEAlifetime=30..}] ~ -256 ~
 
@@ -36,7 +36,7 @@ execute at @e[tag=PEABADbullet] run particle minecraft:composter ^ ^1 ^ .1 .1 .1
 
 
 execute as @e[tag=PEABADbullet] at @s unless block ^ ^1 ^.7 minecraft:air run teleport @s ~ -256 ~
-execute as @e[tag=PEABADaimed,tag=PEABADbullet] at @s run tp @s ^ ^ ^.7
+execute as @e[tag=PEABADaimed,tag=PEABADbullet] at @s run tp @s ^ ^ ^.6
 scoreboard players add @e[tag=PEABADbullet] PEAlifetime 1
 teleport @e[tag=PEABADbullet,scores={PEAlifetime=30..}] ~ -256 ~
 
@@ -55,7 +55,7 @@ execute as @e[tag=spitter,scores={PEAattacktime=60..}] run scoreboard players se
 #kills the spitter if the fern is destroyed
 
 
-execute as @e[tag=spitter] at @s unless block ~ ~ ~ minecraft:fern run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:apple",Count:1b,tag:{display:{Name:'{"text":"Spitterbud Seed"}',Lore:['{"text":"Throw this seed onto a flowerpot"}','{"text":"and water it with a lingering"}','{"text":"splash potion of healing"}','{"text":"to grow your very own spitterbud!"}','{"text":"Be sure to feed it bonemeal regularly!"}']},tag:spitterseed}}}
+execute as @e[tag=spitter] at @s if entity @p[scores={SPITrng=7}] unless block ~ ~ ~ minecraft:fern run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:apple",Count:1b,tag:{display:{Name:'{"text":"Spitterbud Seed"}',Lore:['{"text":"Throw this seed onto a flowerpot"}','{"text":"and water it with a lingering"}','{"text":"splash potion of healing"}','{"text":"to grow your very own spitterbud!"}','{"text":"Be sure to feed it bonemeal regularly!"}']},tag:spitterseed}}}
 
 #spitter will despawn without dropping loot after 20 minutes
 execute as @e[tag=spitter,scores={PEAlifetime=24000..}] at @s if entity @p[distance=24..] run setblock ~ ~ ~ minecraft:air replace
@@ -63,5 +63,5 @@ execute as @e[tag=spitter,scores={PEAlifetime=24000..}] at @s if entity @p[dista
 execute as @e[tag=spitter] at @s unless block ~ ~ ~ minecraft:fern run kill @s
 
 
-
+#SPITrng
 

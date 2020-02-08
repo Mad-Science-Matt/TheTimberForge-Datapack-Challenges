@@ -1,7 +1,7 @@
 #fraction of creepers that spawn on grass/dirt/podzol become hostile spitters instead
 execute as @e[type=creeper,tag=!notspitter] at @s unless block ~ ~-1 ~ minecraft:grass_block unless block ~ ~-1 ~ minecraft:dirt unless block ~ ~-1 ~ minecraft:podzol run tag @s add notspitter
 
-execute as @e[type=creeper,tag=!notspitter,sort=random,limit=1] at @s run scoreboard players add @a SPITrng 1
+scoreboard players add @a SPITrng 1
 
 execute as @e[type=creeper,tag=!notspitter,sort=random,limit=1] at @s if entity @p[scores={SPITrng=2..}] run tag @s add notspitter
 
