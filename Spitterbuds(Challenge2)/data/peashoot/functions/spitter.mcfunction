@@ -52,13 +52,10 @@ execute at @e[tag=PEABADbullet] run particle minecraft:composter ^ ^1 ^ .1 .1 .1
 
 execute as @e[tag=spitter,scores={PEAattacktime=60..}] run scoreboard players set @s PEAattacktime 0
 
-#kills the spitter if the grass or fern is destroyed
-
-execute as @e[tag=spitter] at @s unless block ~ ~-1 ~ minecraft:grass_block run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_apple",Count:1b,tag:{display:{Name:'{"text":"Spitterbud Seed"}',Lore:['{"text":"Throw this seed onto grass"}','{"text":"and water it with a lingering"}','{"text":"splash potion of healing"}','{"text":"to grow your very own spitterbud!"}','{"text":"Be sure to feed it bonemeal regularly!"}']},tag:spitterseed}}}
-execute as @e[tag=spitter] at @s unless block ~ ~-1 ~ minecraft:grass_block run kill @s
+#kills the spitter if the fern is destroyed
 
 
-execute as @e[tag=spitter] at @s unless block ~ ~ ~ minecraft:fern run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_apple",Count:1b,tag:{display:{Name:'{"text":"Spitterbud Seed"}',Lore:['{"text":"Throw this seed onto grass"}','{"text":"and water it with a lingering"}','{"text":"splash potion of healing"}','{"text":"to grow your very own spitterbud!"}','{"text":"Be sure to feed it bonemeal regularly!"}']},tag:spitterseed}}}
+execute as @e[tag=spitter] at @s unless block ~ ~ ~ minecraft:fern run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:apple",Count:1b,tag:{display:{Name:'{"text":"Spitterbud Seed"}',Lore:['{"text":"Throw this seed onto a flowerpot"}','{"text":"and water it with a lingering"}','{"text":"splash potion of healing"}','{"text":"to grow your very own spitterbud!"}','{"text":"Be sure to feed it bonemeal regularly!"}']},tag:spitterseed}}}
 
 #spitter will despawn without dropping loot after 20 minutes
 execute as @e[tag=spitter,scores={PEAlifetime=24000..}] at @s if entity @p[distance=24..] run setblock ~ ~ ~ minecraft:air replace
