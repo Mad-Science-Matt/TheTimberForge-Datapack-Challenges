@@ -8,7 +8,7 @@ execute as @e[tag=peashooter,scores={PEAattacktime=1,PEAlifetime=..144000}] at @
 
 execute as @e[tag=peashooter,scores={PEAattacktime=1,PEAlifetime=..144000}] at @s if entity @e[tag=hostileMob,distance=..16] run scoreboard players add @e[tag=peashooter] PEAlifetime 40
 
-execute as @e[tag=peashooter,scores={PEAattacktime=1,PEAlifetime=..144000}] at @s if entity @e[tag=hostileMob,distance=..16] run playsound minecraft:entity.fox.spit hostile @p ~ ~ ~ 16
+execute as @e[tag=peashooter,scores={PEAattacktime=1,PEAlifetime=..144000}] at @s if entity @e[tag=hostileMob,distance=..16] run playsound minecraft:entity.fox.spit neutral @p ~ ~ ~ 16
 
 
 #projectile code. Notice that part of the code is run twice per tick. This is so that the projectile can fly faster without passing through walls or enemies
@@ -64,7 +64,7 @@ execute as @e[tag=peashooter,scores={PEAlifetime=..0}] run scoreboard players se
 
 
 
-execute at @e[tag=peashooter,scores={PEAlifetime=..20}] run particle minecraft:heart ^ ^1 ^ .2 .2 .2 0 1 normal
+execute at @e[tag=peashooter,scores={PEAlifetime=..7}] run particle minecraft:heart ^ ^1 ^ .2 .2 .2 0 1 normal
 execute at @e[tag=peashooter,scores={PEAlifetime=144010..}] run particle minecraft:angry_villager ^ ^1 ^ .2 .2 .2 0 1 normal
 execute as @e[tag=peashooter,scores={PEAlifetime=144010..}] run scoreboard players set @s PEAlifetime 144000
 

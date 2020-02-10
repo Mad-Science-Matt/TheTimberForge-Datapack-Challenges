@@ -22,7 +22,7 @@ execute at @e[tag=newspitter] run setblock ~ ~ ~ minecraft:fern replace
 
 scoreboard players set @e[tag=newspitter] PEAattacktime 2
 
-scoreboard players set @e[tag=newpeashooter] PEAlifetime 0
+scoreboard players set @e[tag=newspitter] PEAlifetime 0
 
 
 
